@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import cx from 'classnames'
 import { toggleTodo } from '../actions'
 
-const Todo = ({ todo, toggleTodo }) => (
-  <li className='todo-item' onClick={() => toggleTodo(todo.id)}>
+const Todo = ({ todo, changeTodo }) => (
+  <li className='todo-item' onClick={() => changeTodo(todo.id)}>
     {todo && todo.completed ? '👌' : '👋'}{' '}
     <span
       className={cx(
@@ -17,7 +17,11 @@ const Todo = ({ todo, toggleTodo }) => (
   </li>
 )
 
+const mapDispatchToProps = dispatch => ({
+  changeTodo: (id) =>  dispatch(toggleTodo(id))
+})
+
 export default connect(
   null,
-  { toggleTodo }
+  mapDispatchToProps,
 )(Todo)

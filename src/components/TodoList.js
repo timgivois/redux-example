@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+
 import Todo from './Todo'
 import { getTodosByVisibilityFilter } from '../selectors'
 import { VISIBILITY_FILTERS } from '../constants'

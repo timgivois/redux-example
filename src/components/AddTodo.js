@@ -13,7 +13,9 @@ class AddTodo extends React.Component {
   }
 
   handleAddTodo = () => {
-    this.props.addTodo(this.state.input)
+    const { submitTodo } = this.props
+
+    submitTodo(this.state.input)
     this.setState({ input: '' })
   }
 
@@ -32,8 +34,11 @@ class AddTodo extends React.Component {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  submitTodo: todo => dispatch(addTodo(todo))
+})
+
 export default connect(
   null,
-  { addTodo }
+  mapDispatchToProps,
 )(AddTodo)
-// export default AddTodo

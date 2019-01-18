@@ -4,10 +4,11 @@ import { connect } from 'react-redux'
 import { setFilter } from '../actions'
 import { VISIBILITY_FILTERS } from '../constants'
 
-const VisibilityFilters = ({ activeFilter, setFilter }) => {
+const VisibilityFilters = ({ activeFilter, changeFilter }) => {
   return (
     <div className='visibility-filters'>
-      {Object.keys(VISIBILITY_FILTERS).map(filterKey => {
+      {
+        Object.keys(VISIBILITY_FILTERS).map(filterKey => {
         const currentFilter = VISIBILITY_FILTERS[filterKey]
         return (
           <span
@@ -17,7 +18,7 @@ const VisibilityFilters = ({ activeFilter, setFilter }) => {
               currentFilter === activeFilter && 'filter--active'
             )}
             onClick={() => {
-              setFilter(currentFilter)
+              changeFilter(currentFilter)
             }}
           >
             {currentFilter}
@@ -32,7 +33,11 @@ const mapStateToProps = state => {
   return { activeFilter: state.visibilityFilter }
 }
 
+const mapDispatchToProps = dispatch => ({
+  changeFilter: (currentFilter) =>  dispatch(setFilter(currentFilter))
+})
+
 export default connect(
   mapStateToProps,
-  { setFilter }
+  mapDispatchToProps
 )(VisibilityFilters)
