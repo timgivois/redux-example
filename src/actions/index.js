@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, SET_FILTER } from './types'
+import { ADD_TODO, TOGGLE_TODO, SET_FILTER, ADD_BALANCE, SUBTRACT_BALANCE } from './types'
 
 let nextTodoId = 0
 
@@ -18,4 +18,12 @@ export const toggleTodo = id => ({
 export const setFilter = filter => ({
   type: SET_FILTER,
   payload: { filter }
+})
+
+export const addBalance = () => ({
+  type: ADD_BALANCE
+})
+
+export const subtractBalance = () => ({
+  type: SUBTRACT_BALANCE
 })

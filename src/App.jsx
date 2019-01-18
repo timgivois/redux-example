@@ -3,6 +3,8 @@ import React from 'react'
 import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
 import VisibilityFilters from './components/VisibilityFilters'
+import BalanceNumber from './components/BalanceNumber'
+import BalanceActions from './components/BalanceActions'
 import './styles.css'
 
 export default function TodoApp () {
@@ -12,6 +14,8 @@ export default function TodoApp () {
       <AddTodo />
       <TodoList />
       <VisibilityFilters />
+      <BalanceNumber />
+      <BalanceActions />
     </div>
   )
 }
