@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { getBalance } from '../selectors'
 
 const BalanceNumber = ({ balanceAmount }) => (
-  <div>
+  <div className='balance-number-container'>
     {balanceAmount}
   </div>
 )

@@ -12,6 +12,7 @@
   margin-top: 1rem;
   text-align: left;
   list-style: none;
+  font-size: 17px;
 }
 
 /** todo item **/
@@ -33,4 +34,16 @@
 }
 .filter--active {
   border-bottom: 1px solid black;
+}
+
+.balance-number-container {
+  font-size: 40px;
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
+
+.balance-button {
+  width: 80px;
+  height: 25px;
+  margin-right: 20px;
 }

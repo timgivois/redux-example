@@ -5,8 +5,8 @@ import { addBalance, subtractBalance } from '../actions'
 
 const BalanceActions = ({ onAdd, onSubstract }) => (
   <div>
-    <button onClick={onAdd}>Add 1</button>
-    <button onClick={onSubstract}>Substract 1</button>
+    <button onClick={onAdd} className="balance-button">Add 1</button>
+    <button onClick={onSubstract} className="balance-button">Substract 1</button>
   </div>
 )
 
