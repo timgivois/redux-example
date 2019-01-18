@@ -1,14 +1,14 @@
-import { ADD_TODO, TOGGLE_TODO } from "../actionTypes";
+import { ADD_TODO, TOGGLE_TODO } from '../actions/types'
 
 const initialState = {
   allIds: [],
   byIds: {}
-};
+}
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case ADD_TODO: {
-      const { id, content } = action.payload;
+      const { id, content } = action.payload
       return {
         ...state,
         allIds: [...state.allIds, id],
@@ -19,10 +19,10 @@ export default function(state = initialState, action) {
             completed: false
           }
         }
-      };
+      }
     }
     case TOGGLE_TODO: {
-      const { id } = action.payload;
+      const { id } = action.payload
       return {
         ...state,
         byIds: {
@@ -32,9 +32,9 @@ export default function(state = initialState, action) {
             completed: !state.byIds[id].completed
           }
         }
-      };
+      }
     }
     default:
-      return state;
+      return state
   }
 }
